@@ -29,76 +29,98 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.cmbBox_MaskSize = new System.Windows.Forms.ComboBox();
+            this.pctBox_ImageSpace = new System.Windows.Forms.PictureBox();
+            this.btn_Apply = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.txtBox_SelectedFilter = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_ImageSpace)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(155, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mask size";
             // 
-            // comboBox1
+            // cmbBox_MaskSize
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbBox_MaskSize.Enabled = false;
+            this.cmbBox_MaskSize.FormattingEnabled = true;
+            this.cmbBox_MaskSize.Items.AddRange(new object[] {
             "3",
             "5",
             "7",
             "9"});
-            this.comboBox1.Location = new System.Drawing.Point(15, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.cmbBox_MaskSize.Location = new System.Drawing.Point(158, 22);
+            this.cmbBox_MaskSize.Name = "cmbBox_MaskSize";
+            this.cmbBox_MaskSize.Size = new System.Drawing.Size(51, 21);
+            this.cmbBox_MaskSize.TabIndex = 1;
             // 
-            // pictureBox1
+            // pctBox_ImageSpace
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(15, 52);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(406, 321);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pctBox_ImageSpace.Location = new System.Drawing.Point(12, 52);
+            this.pctBox_ImageSpace.Name = "pctBox_ImageSpace";
+            this.pctBox_ImageSpace.Size = new System.Drawing.Size(574, 432);
+            this.pctBox_ImageSpace.TabIndex = 2;
+            this.pctBox_ImageSpace.TabStop = false;
             // 
-            // button1
+            // btn_Apply
             // 
-            this.button1.Location = new System.Drawing.Point(265, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Apply";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Apply.Location = new System.Drawing.Point(224, 22);
+            this.btn_Apply.Name = "btn_Apply";
+            this.btn_Apply.Size = new System.Drawing.Size(75, 23);
+            this.btn_Apply.TabIndex = 4;
+            this.btn_Apply.Text = "Apply";
+            this.btn_Apply.UseVisualStyleBackColor = true;
+            this.btn_Apply.Click += new System.EventHandler(this.imApply);
             // 
-            // button2
+            // btn_Save
             // 
-            this.button2.Location = new System.Drawing.Point(346, 23);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_Save.Location = new System.Drawing.Point(305, 22);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(75, 23);
+            this.btn_Save.TabIndex = 5;
+            this.btn_Save.Text = "Save";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.imSave);
+            // 
+            // txtBox_SelectedFilter
+            // 
+            this.txtBox_SelectedFilter.Location = new System.Drawing.Point(15, 23);
+            this.txtBox_SelectedFilter.Name = "txtBox_SelectedFilter";
+            this.txtBox_SelectedFilter.ReadOnly = true;
+            this.txtBox_SelectedFilter.Size = new System.Drawing.Size(137, 20);
+            this.txtBox_SelectedFilter.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Chosen filter:";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(433, 385);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(887, 535);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtBox_SelectedFilter);
+            this.Controls.Add(this.btn_Save);
+            this.Controls.Add(this.btn_Apply);
+            this.Controls.Add(this.pctBox_ImageSpace);
+            this.Controls.Add(this.cmbBox_MaskSize);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
-            this.Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Text = "Filter Dialog";
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_ImageSpace)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,9 +129,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cmbBox_MaskSize;
+        private System.Windows.Forms.PictureBox pctBox_ImageSpace;
+        private System.Windows.Forms.Button btn_Apply;
+        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.TextBox txtBox_SelectedFilter;
+        private System.Windows.Forms.Label label2;
     }
 }

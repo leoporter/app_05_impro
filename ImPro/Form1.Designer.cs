@@ -40,10 +40,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -55,7 +52,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Load an image";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.imLoad);
             // 
             // pictureBox1
             // 
@@ -64,7 +61,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Location = new System.Drawing.Point(3, 99);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(591, 306);
+            this.pictureBox1.Size = new System.Drawing.Size(591, 354);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -108,7 +105,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.vScrollBar1.Location = new System.Drawing.Point(597, 8);
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(18, 397);
+            this.vScrollBar1.Size = new System.Drawing.Size(18, 445);
             this.vScrollBar1.TabIndex = 6;
             this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
             // 
@@ -120,7 +117,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "To greyscale";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.btn_Gray_Click);
             // 
             // button3
             // 
@@ -130,7 +127,7 @@
             this.button3.TabIndex = 8;
             this.button3.Text = "Save an image";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.imSave);
             // 
             // button4
             // 
@@ -140,7 +137,7 @@
             this.button4.TabIndex = 9;
             this.button4.Text = "Count unique pixels";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.btn_CountPixels_Click);
             // 
             // textBox3
             // 
@@ -155,36 +152,15 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(88, 23);
             this.button5.TabIndex = 11;
-            this.button5.Text = "Low-pass filter";
+            this.button5.Text = "Filter Options";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(263, 70);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(88, 23);
-            this.button6.TabIndex = 12;
-            this.button6.Text = "High-pass filter";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(386, 41);
-            this.trackBar1.Maximum = 1;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(104, 45);
-            this.trackBar1.SmallChange = 10;
-            this.trackBar1.TabIndex = 13;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            this.button5.Click += new System.EventHandler(this.imLowPassFilter);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 417);
-            this.Controls.Add(this.trackBar1);
-            this.Controls.Add(this.button6);
+            this.ClientSize = new System.Drawing.Size(620, 465);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button4);
@@ -199,9 +175,8 @@
             this.Controls.Add(this.button1);
             this.MinimumSize = new System.Drawing.Size(300, 300);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "ImPro";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,8 +196,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TrackBar trackBar1;
     }
 }
 
