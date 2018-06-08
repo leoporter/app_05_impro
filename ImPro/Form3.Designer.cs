@@ -36,6 +36,9 @@
             this.rd_btn_Median = new System.Windows.Forms.RadioButton();
             this.rd_btn_Average = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rd_btn_Red = new System.Windows.Forms.RadioButton();
+            this.rd_btn_Green = new System.Windows.Forms.RadioButton();
+            this.rd_btn_Blue = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,16 +117,52 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rd_btn_Blue);
+            this.groupBox1.Controls.Add(this.rd_btn_Green);
+            this.groupBox1.Controls.Add(this.rd_btn_Red);
             this.groupBox1.Controls.Add(this.rd_btn_HighPass);
             this.groupBox1.Controls.Add(this.rd_btn_Average);
             this.groupBox1.Controls.Add(this.rd_btn_LowPass);
             this.groupBox1.Controls.Add(this.rd_btn_Median);
-            this.groupBox1.Location = new System.Drawing.Point(74, 42);
+            this.groupBox1.Location = new System.Drawing.Point(12, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(106, 120);
+            this.groupBox1.Size = new System.Drawing.Size(223, 120);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filters:";
+            // 
+            // rd_btn_Red
+            // 
+            this.rd_btn_Red.AutoSize = true;
+            this.rd_btn_Red.Location = new System.Drawing.Point(125, 26);
+            this.rd_btn_Red.Name = "rd_btn_Red";
+            this.rd_btn_Red.Size = new System.Drawing.Size(45, 17);
+            this.rd_btn_Red.TabIndex = 9;
+            this.rd_btn_Red.TabStop = true;
+            this.rd_btn_Red.Text = "Red";
+            this.rd_btn_Red.UseVisualStyleBackColor = true;
+            // 
+            // rd_btn_Green
+            // 
+            this.rd_btn_Green.AutoSize = true;
+            this.rd_btn_Green.Location = new System.Drawing.Point(125, 49);
+            this.rd_btn_Green.Name = "rd_btn_Green";
+            this.rd_btn_Green.Size = new System.Drawing.Size(54, 17);
+            this.rd_btn_Green.TabIndex = 10;
+            this.rd_btn_Green.TabStop = true;
+            this.rd_btn_Green.Text = "Green";
+            this.rd_btn_Green.UseVisualStyleBackColor = true;
+            // 
+            // rd_btn_Blue
+            // 
+            this.rd_btn_Blue.AutoSize = true;
+            this.rd_btn_Blue.Location = new System.Drawing.Point(125, 72);
+            this.rd_btn_Blue.Name = "rd_btn_Blue";
+            this.rd_btn_Blue.Size = new System.Drawing.Size(46, 17);
+            this.rd_btn_Blue.TabIndex = 11;
+            this.rd_btn_Blue.TabStop = true;
+            this.rd_btn_Blue.Text = "Blue";
+            this.rd_btn_Blue.UseVisualStyleBackColor = true;
             // 
             // Form3
             // 
@@ -153,5 +192,8 @@
         private System.Windows.Forms.RadioButton rd_btn_Median;
         private System.Windows.Forms.RadioButton rd_btn_Average;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rd_btn_Blue;
+        private System.Windows.Forms.RadioButton rd_btn_Green;
+        private System.Windows.Forms.RadioButton rd_btn_Red;
     }
 }

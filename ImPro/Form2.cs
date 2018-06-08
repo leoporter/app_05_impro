@@ -18,17 +18,47 @@ namespace ImPro
         public Form2(System.Drawing.Image imageFrom_Form1, string filterFromForm3)
         {
             InitializeComponent();
-            pctBox_ImageSpace.Image = imageFrom_Form1;
-            txtBox_SelectedFilter.Text = filterFromForm3;
-            if(filterFromForm3=="Low-Pass" || filterFromForm3 == "High-Pass")
+            pctBox_ImageSpace.Image = imageFrom_Form1;                          // przesłanie do form2 obrazu z form1
+            pctBox_ImageSpace.SizeMode = PictureBoxSizeMode.AutoSize;           // dopasowanie wymiaru obrazu do picture Boxa
+            txtBox_SelectedFilter.Text = filterFromForm3;                       // przesłanie z form3 informacji o wybranym filtrze
+
+            if(filterFromForm3=="Low-Pass" || filterFromForm3 == "High-Pass")   // jeśli wybrano któryś z tych fitrów
             {
-                cmbBox_MaskSize.Enabled = true;
+                cmbBox_MaskSize.Enabled = true;                                 // to uaktywnij comboBox z wyborem maski
             }
         }
 
         private void imApply(object sender, EventArgs e)
         {
-
+            Bitmap copy = new Bitmap(pctBox_ImageSpace.Image);
+            
+            try
+            {
+                if (txtBox_SelectedFilter.Text == "Average")                    // jeśli wybrano filtr Average
+                {
+                    pctBox_ImageSpace.Image = Processing.imAverageFilter(copy); // to zatosuj go na obrazie
+                }
+                if (txtBox_SelectedFilter.Text == "Red")                        // jeśli wybrano filtr Red
+                {
+                    string filter = txtBox_SelectedFilter.Text;
+                    pctBox_ImageSpace.Image = Processing.imSetColorFilter(copy, filter); // to zatosuj go na obrazie
+                }
+                if (txtBox_SelectedFilter.Text == "Green")                        // jeśli wybrano filtr Red
+                {
+                    string filter = txtBox_SelectedFilter.Text;
+                    pctBox_ImageSpace.Image = Processing.imSetColorFilter(copy, filter); // to zatosuj go na obrazie
+                }
+                if (txtBox_SelectedFilter.Text == "Blue")                        // jeśli wybrano filtr Red
+                {
+                    string filter = txtBox_SelectedFilter.Text;
+                    pctBox_ImageSpace.Image = Processing.imSetColorFilter(copy, filter); // to zatosuj go na obrazie
+                }
+            }
+            catch
+            {
+                MessageBox.Show("A problem occured!");
+            }
+            
         }
 
         private void imSave(object sender, EventArgs e)

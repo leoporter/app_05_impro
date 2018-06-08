@@ -30,7 +30,10 @@ namespace ImPro
             if (rd_btn_LowPass.Checked==true ||
                 rd_btn_HighPass.Checked==true ||
                 rd_btn_Median.Checked==true ||
-                rd_btn_Average.Checked==true)  // jeśli spełniono warunek wyboru 1 opcji
+                rd_btn_Average.Checked==true ||
+                rd_btn_Red.Checked==true ||
+                rd_btn_Green.Checked==true ||
+                rd_btn_Blue.Checked==true)  // jeśli spełniono warunek wyboru 1 opcji
             {
                 this.Close();                               // zamkyka się Formularz
                 string selectedFilter = "No filter selected";
@@ -38,6 +41,9 @@ namespace ImPro
                 if (rd_btn_HighPass.Checked == true) selectedFilter = rd_btn_HighPass.Text;
                 if (rd_btn_Median.Checked == true) selectedFilter = rd_btn_Median.Text;
                 if (rd_btn_Average.Checked == true) selectedFilter = rd_btn_Average.Text;
+                if (rd_btn_Red.Checked == true) selectedFilter = rd_btn_Red.Text;
+                if (rd_btn_Green.Checked == true) selectedFilter = rd_btn_Green.Text;
+                if (rd_btn_Blue.Checked == true) selectedFilter = rd_btn_Blue.Text;
                 Form2 filterForm = new Form2(temp_copy, selectedFilter);    // tworzy się i otwiera nowy z edycją do filtrów
                 filterForm.Show();
             }

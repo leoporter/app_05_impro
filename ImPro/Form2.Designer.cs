@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbBox_MaskSize = new System.Windows.Forms.ComboBox();
             this.pctBox_ImageSpace = new System.Windows.Forms.PictureBox();
@@ -35,6 +36,7 @@
             this.btn_Save = new System.Windows.Forms.Button();
             this.txtBox_SelectedFilter = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_ImageSpace)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,9 +65,12 @@
             // 
             // pctBox_ImageSpace
             // 
+            this.pctBox_ImageSpace.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pctBox_ImageSpace.Location = new System.Drawing.Point(12, 52);
             this.pctBox_ImageSpace.Name = "pctBox_ImageSpace";
-            this.pctBox_ImageSpace.Size = new System.Drawing.Size(574, 432);
+            this.pctBox_ImageSpace.Size = new System.Drawing.Size(368, 324);
             this.pctBox_ImageSpace.TabIndex = 2;
             this.pctBox_ImageSpace.TabStop = false;
             // 
@@ -110,7 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 535);
+            this.ClientSize = new System.Drawing.Size(394, 388);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBox_SelectedFilter);
             this.Controls.Add(this.btn_Save);
@@ -135,5 +140,6 @@
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.TextBox txtBox_SelectedFilter;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer timer1;
     }
 }

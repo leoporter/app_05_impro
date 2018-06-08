@@ -31,6 +31,7 @@ namespace ImPro
                 pictureBox1.Image = new Bitmap(dialog.FileName);        // nowa bitmapa - taka jak otwarty obraz
                 textBox2.Text = pictureBox1.Image.Width.ToString();     // wyświetl szerokość obrazu
                 textBox1.Text = pictureBox1.Image.Height.ToString();    // wyświetl wysokość obrazu
+                pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;     // dopasowanie wymiaru obrazu do picture Boxa
             }
             dialog.Dispose();
         }
@@ -80,7 +81,7 @@ namespace ImPro
 
             try
             {
-                textBox3.Text = Processing.imCountPixels(image).ToString();
+                textBox3.Text = Processing.imCountPixels(image).ToString(); // użycie na obrazie metody do policzenia liczby pikseli w obrazie
             }
             catch
             {
@@ -88,7 +89,7 @@ namespace ImPro
             }
         }
 
-        protected void imLowPassFilter(object sender, EventArgs e)
+        protected void imLowPassFilter(object sender, EventArgs e)          // przejście do wyboru filtra
         {
             Image copy = pictureBox1.Image;
             Form3 form = new Form3(copy);
@@ -108,6 +109,44 @@ namespace ImPro
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SetBrightness(object sender, EventArgs e)
+        {
+            try
+            {
+                /*
+                Bitmap image = new Bitmap(pictureBox1.Image);
+                Bitmap imageClone = (Bitmap)image.Clone();
+                int current_brightness = trBar_Brightness.Value;
+                int brightness;
+                int prev_brightness = 0;
+
+                txtBox_Brightness.Text = current_brightness.ToString();
+                if (brightness - prev_brightness >= 0)
+                {
+                    pictureBox1.Image = Processing.imSetBrightness(imageClone, brightness);
+                }
+                else
+                {
+                    pictureBox1.Image = Processing.imSetBrightness(imageClone, -brightness);
+                }
+                */
+            }
+            catch
+            {
+                MessageBox.Show("A problem occured!");
+            }
+        }
+
+        private void TrBar_Brightness_ValueChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
