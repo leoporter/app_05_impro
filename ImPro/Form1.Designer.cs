@@ -43,6 +43,9 @@
             this.trBar_Brightness = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBox_Brightness = new System.Windows.Forms.TextBox();
+            this.btn_Invert = new System.Windows.Forms.Button();
+            this.btn_CompareRGB = new System.Windows.Forms.Button();
+            this.btn_Rotate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trBar_Brightness)).BeginInit();
             this.SuspendLayout();
@@ -63,9 +66,9 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 99);
+            this.pictureBox1.Location = new System.Drawing.Point(104, 102);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(421, 341);
+            this.pictureBox1.Size = new System.Drawing.Size(462, 341);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -163,6 +166,7 @@
             // trBar_Brightness
             // 
             this.trBar_Brightness.Location = new System.Drawing.Point(407, 24);
+            this.trBar_Brightness.Maximum = 50;
             this.trBar_Brightness.Name = "trBar_Brightness";
             this.trBar_Brightness.Size = new System.Drawing.Size(164, 45);
             this.trBar_Brightness.TabIndex = 12;
@@ -185,11 +189,44 @@
             this.txtBox_Brightness.Size = new System.Drawing.Size(100, 20);
             this.txtBox_Brightness.TabIndex = 14;
             // 
+            // btn_Invert
+            // 
+            this.btn_Invert.Location = new System.Drawing.Point(283, 73);
+            this.btn_Invert.Name = "btn_Invert";
+            this.btn_Invert.Size = new System.Drawing.Size(88, 23);
+            this.btn_Invert.TabIndex = 15;
+            this.btn_Invert.Text = "Invert";
+            this.btn_Invert.UseVisualStyleBackColor = true;
+            this.btn_Invert.Click += new System.EventHandler(this.btn_Click_Invert);
+            // 
+            // btn_CompareRGB
+            // 
+            this.btn_CompareRGB.Location = new System.Drawing.Point(407, 60);
+            this.btn_CompareRGB.Name = "btn_CompareRGB";
+            this.btn_CompareRGB.Size = new System.Drawing.Size(127, 23);
+            this.btn_CompareRGB.TabIndex = 16;
+            this.btn_CompareRGB.Text = "Compare RGB Weights";
+            this.btn_CompareRGB.UseVisualStyleBackColor = true;
+            this.btn_CompareRGB.Click += new System.EventHandler(this.btn_Click_CompareRGBWeights);
+            // 
+            // btn_Rotate
+            // 
+            this.btn_Rotate.Location = new System.Drawing.Point(12, 114);
+            this.btn_Rotate.Name = "btn_Rotate";
+            this.btn_Rotate.Size = new System.Drawing.Size(75, 23);
+            this.btn_Rotate.TabIndex = 17;
+            this.btn_Rotate.Text = "Rotate";
+            this.btn_Rotate.UseVisualStyleBackColor = true;
+            this.btn_Rotate.Click += new System.EventHandler(this.btn_Click_Rotate);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(620, 465);
+            this.Controls.Add(this.btn_Rotate);
+            this.Controls.Add(this.btn_CompareRGB);
+            this.Controls.Add(this.btn_Invert);
             this.Controls.Add(this.txtBox_Brightness);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.trBar_Brightness);
@@ -233,6 +270,9 @@
         private System.Windows.Forms.TrackBar trBar_Brightness;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBox_Brightness;
+        private System.Windows.Forms.Button btn_Invert;
+        private System.Windows.Forms.Button btn_CompareRGB;
+        private System.Windows.Forms.Button btn_Rotate;
     }
 }
 

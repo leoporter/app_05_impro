@@ -116,27 +116,26 @@ namespace ImPro
 
         }
 
+        int prev = 0;
+
         private void SetBrightness(object sender, EventArgs e)
         {
             try
             {
-                /*
                 Bitmap image = new Bitmap(pictureBox1.Image);
-                Bitmap imageClone = (Bitmap)image.Clone();
-                int current_brightness = trBar_Brightness.Value;
-                int brightness;
-                int prev_brightness = 0;
-
-                txtBox_Brightness.Text = current_brightness.ToString();
-                if (brightness - prev_brightness >= 0)
+                int brightness = trBar_Brightness.Value;
+                txtBox_Brightness.Text = brightness.ToString();
+                
+                if (brightness - prev >= 0)
                 {
-                    pictureBox1.Image = Processing.imSetBrightness(imageClone, brightness);
+                    pictureBox1.Image = Processing.imSetBrightness(image, brightness);
                 }
                 else
                 {
-                    pictureBox1.Image = Processing.imSetBrightness(imageClone, -brightness);
+                    pictureBox1.Image = Processing.imSetBrightness(image, -brightness);
                 }
-                */
+                prev = brightness;
+
             }
             catch
             {
@@ -147,6 +146,31 @@ namespace ImPro
         private void TrBar_Brightness_ValueChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btn_Click_Invert(object sender, EventArgs e)
+        {
+            Bitmap image = new Bitmap(pictureBox1.Image);
+            pictureBox1.Image = Processing.imSetInvert(image);
+        }
+
+        private void btn_Click_CompareRGBWeights(object sender, EventArgs e)
+        {
+            try
+            {
+                Image copy = pictureBox1.Image;
+                Form4 form4 = new Form4(copy);
+                form4.Show();
+            }
+            catch
+            {
+                MessageBox.Show("A problem occured!");
+            }
+        }
+
+        private void btn_Click_Rotate(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Processing2.imRotate((Bitmap)pictureBox1.Image);
         }
     }
 }

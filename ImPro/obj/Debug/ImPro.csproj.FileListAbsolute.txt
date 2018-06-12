@@ -29,3 +29,4 @@ C:\Users\Dominik\Documents\app_05_impro\ImPro\obj\Debug\ImPro.Form2.resources
 C:\Users\Dominik\Documents\app_05_impro\ImPro\obj\Debug\ImPro.Properties.Resources.resources
 C:\Users\Dominik\Documents\app_05_impro\ImPro\obj\Debug\ImPro.csproj.GenerateResource.Cache
 C:\Users\Dominik\Documents\app_05_impro\ImPro\obj\Debug\ImPro.Form3.resources
+C:\Users\Dominik\Documents\app_05_impro\ImPro\obj\Debug\ImPro.Form4.resources

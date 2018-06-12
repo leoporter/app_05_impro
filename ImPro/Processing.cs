@@ -118,9 +118,9 @@ namespace ImPro
         public static Bitmap imSetColorFilter(Bitmap image, string colorFilterType)
         {
             Color c;
-            for (int i = 1; i < image.Width - 1; i++)
+            for (int i = 0; i < image.Width; i++)
             {
-                for (int j = 1; j < image.Height - 1; j++)
+                for (int j = 0; j < image.Height; j++)
                 {
                     c = image.GetPixel(i,j);
                     int nPixelR = 0;
@@ -165,6 +165,8 @@ namespace ImPro
 
         public static Bitmap imSetBrightness(Bitmap image, int brightness)
         {
+            Bitmap temp = image;
+            Bitmap clone = (Bitmap)temp.Clone();
             Color c;
 
             if (brightness < -255)
@@ -176,11 +178,11 @@ namespace ImPro
                 brightness = 255;
             }
 
-            for (int i = 1; i < image.Width - 1; i++)
+            for (int i = 0; i < clone.Width; i++)
             {
-                for (int j = 1; j < image.Height - 1; j++)
+                for (int j = 0; j < clone.Height; j++)
                 {
-                    c = image.GetPixel(i, j);
+                    c = clone.GetPixel(i, j);
                     int cR = c.R + brightness;
                     int cG = c.G + brightness;
                     int cB = c.B + brightness;
@@ -192,11 +194,27 @@ namespace ImPro
                     if (cB < 0) cB = 1;
                     if (cB > 255) cB = 255;
 
-                    image.SetPixel(i,j,Color.FromArgb((byte)cR, (byte)cG, (byte)cB));
+                    clone.SetPixel(i,j,Color.FromArgb((byte)cR, (byte)cG, (byte)cB));
                 }
             }
 
-            return image;
+            return clone;
+        }
+
+        public static Bitmap imSetInvert(Bitmap image)
+        {
+            Bitmap temp = image;
+            Bitmap clone = (Bitmap)temp.Clone();
+            Color c;
+            for (int i = 0; i < clone.Width; i++)
+            {
+                for (int j = 0; j < clone.Height; j++)
+                {
+                    c = clone.GetPixel(i,j);
+                    clone.SetPixel(i,j,Color.FromArgb(255-c.R, 255-c.G, 255-c.B));
+                }
+            }
+            return clone;
         }
     }
 }
